@@ -59,12 +59,25 @@
   <ItemGroup>
     <Content Include="content\bootstrap.cosmo.css" />
     <Content Include="content\bootstrap.cosmo.min.css" />
+    <Content Include="content\bootstrap.flatly.css" />
+    <Content Include="content\bootstrap.flatly.min.css" />
     <Content Include="content\bootstrap.paper.css" />
     <Content Include="content\bootstrap.paper.min.css" />
     <Content Include="content\bootstrap.spacelab.css" />
     <Content Include="content\bootstrap.spacelab.min.css" />
+    <Content Include="content\bootstrap.superhero.css" />
+    <Content Include="content\bootstrap.superhero.min.css" />
     <Content Include="Demo02\index.html" />
     <Content Include="Demo03\index.html" />
+    <Content Include="Demo04\index.html" />
+    <Content Include="Demo05\index.html" />
+    <Content Include="Demo05\my-customer-badge.html" />
+    <Content Include="Demo06\404.html" />
+    <Content Include="Demo06\app\app.js" />
+    <Content Include="Demo06\app\areas\home\controllers\HomeCtrl.js" />
+    <Content Include="Demo06\app\areas\home\views\index.html" />
+    <Content Include="Demo06\app\repositories\CustomerRepository.js" />
+    <Content Include="Demo06\index.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -823,6 +836,7 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Demo06\app\data\customers.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -860,6 +874,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Demo06\app\directives\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

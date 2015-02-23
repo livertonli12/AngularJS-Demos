@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<head>
+    <title>Directives</title>
+    <link href="../content/bootstrap.superhero.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container" ng-controller="MeuCtrl">
+        <h1>{{title}}</h1>
+        <hr/>
+        <div class="row">
+            <div my-customer></div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div my-customer-badge></div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-4" ng-repeat="x in clientes" my-customer-generic cliente="x"></div>
+        </div>
+    </div>
+
+    <script src="../Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+
+        app.controller('MeuCtrl', [
+            '$scope', function($scope) {
+                $scope.title = 'Minhas Diretivas';
+
+                $scope.cliente = {
+                    nome: 'Líverton',
+                    sobrenome: 'Oliveira',
+                    imagem: 'http://placehold.it/80x80',
+                    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
+                }
+
+                $scope.clientes = [
+                    {
+                        nome: 'Líverton',
+                        sobrenome: 'Oliveira',
+                        imagem: 'http://placehold.it/80x80',
+                        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
+                    },
+                    {
+                        nome: 'Karen',
+                        sobrenome: 'Massena',
+                        imagem: 'http://placehold.it/80x80',
+                        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
+                    }
+                ];
+            }
+        ]);
+
+        app.directive('myCustomer', function() {
+            return {
+                template: 'Nome: {{ cliente.nome }} {{ cliente.sobrenome }}'
+            }
+        });
+
+        app.directive('myCustomerBadge', function() {
+            return {
+                templateUrl: 'my-customer-badge.html'
+            }
+        });
+
+        app.directive('myCustomerGeneric', function() {
+            return {
+                templateUrl: 'my-customer-badge.html',
+                scope: {
+                    cliente: '='
+                }
+            }
+        }); 
+    </script>
+
+</body>
+</html>

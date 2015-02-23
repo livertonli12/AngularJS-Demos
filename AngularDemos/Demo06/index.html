@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<head>
+    <title>Estruturando a Aplicação - {{title}}</title>
+    <link href="../content/bootstrap.superhero.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <div ng-view></div>
+    </div>
+
+    <script src="../Scripts/jquery-2.1.3.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+    <script src="../Scripts/angular-animate.min.js"></script>
+    <!--Configuração geral-->
+    <script src="app/app.js"></script>
+    <!--Controllers-->
+    <script src="app/areas/home/controllers/HomeCtrl.js"></script>
+    <!--Factories-->
+    <script src="app/repositories/CustomerRepository.js"></script>
+</body>
+</html>
